@@ -75,11 +75,12 @@ const backBtn = document.getElementById("backBtn");
 const music = document.getElementById("bgMusic");
 
 /* ===================================
-   تشغيل الموسيقى تلقائي على اللاب
-   وعلى الموبايل بعد أول Tap
+   تشغيل الموسيقى
+   Laptop: autoplay
+   Mobile: أول لمسة
 =================================== */
+// Laptop autoplay attempt
 window.addEventListener("load", () => {
-    // محاولة تشغيل الموسيقى تلقائي (Laptop)
     music.muted = false;
     music.volume = 0.7;
     music.play().catch(err => {
@@ -87,7 +88,7 @@ window.addEventListener("load", () => {
     });
 });
 
-// Mobile fallback: تشغيل عند أول لمسة
+// Mobile fallback: أول لمسة
 document.addEventListener("touchstart", () => {
     music.muted = false;
     music.volume = 0.7;
@@ -102,7 +103,7 @@ loginForm.addEventListener("submit", (e) => {
     const userName = nameInput.value.trim();
     if (!userName) return;
 
-    // Save name
+    // Save name and display
     localStorage.setItem("userName", userName);
     userNameSpan.textContent = userName;
 
@@ -115,7 +116,6 @@ loginForm.addEventListener("submit", (e) => {
     loginPage.classList.remove("active");
     setTimeout(() => messagePage.classList.add("active"), 300);
 
-    // Clear input
     nameInput.value = "";
 });
 
@@ -126,7 +126,7 @@ backBtn.addEventListener("click", () => {
     messagePage.classList.remove("active");
     setTimeout(() => loginPage.classList.add("active"), 300);
 
-    // ايقاف الموسيقى
+    // Stop music
     music.pause();
     music.currentTime = 0;
 });

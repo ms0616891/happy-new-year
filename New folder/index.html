@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merry Christmas & Happy New Year</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- Snow Canvas Animation -->
+    <canvas id="snowCanvas"></canvas>
+
+    <!-- Bokeh Light Effects Background -->
+    <div class="bokeh-container">
+        <div class="bokeh-light"></div>
+        <div class="bokeh-light"></div>
+        <div class="bokeh-light"></div>
+        <div class="bokeh-light"></div>
+        <div class="bokeh-light"></div>
+        <div class="bokeh-light"></div>
+    </div>
+
+    <!-- Page 1: Login Page -->
+    <div id="loginPage" class="page active">
+        <div class="page-content">
+            <div class="glass-card fade-in">
+                <div class="card-glow"></div>
+                <h1 class="title">🎄 Welcome 🎄</h1>
+                <p class="subtitle">Season's Greetings</p>
+                
+                <form id="loginForm">
+                    <label for="nameInput" class="input-label">Enter your name</label>
+                    <input 
+                        type="text" 
+                        id="nameInput" 
+                        class="name-input" 
+                        placeholder="Your name here..."
+                        required
+                        autocomplete="off"
+                    >
+                    <button type="submit" class="submit-btn">
+                        <span>Log in</span>
+                        <div class="btn-glow"></div>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 2: Message Page -->
+    <div id="messagePage" class="page">
+        <div class="page-content">
+            <div class="message-container">
+                <h1 class="message-title slide-up">Message for you, <span id="userName" class="highlight"></span></h1>
+                
+                <div class="message-card glass-card slide-up delay-1">
+                    <div class="card-glow"></div>
+                    <p class="message-text">
+                        <!-- Add your custom message here -->
+                        Wishing you a magical Christmas filled with joy, love, and precious moments. 
+                        May the New Year bring you endless opportunities, success, and happiness. 
+                        May all your dreams come true and may you find peace and prosperity in the coming year.
+                    </p>
+                </div>
+
+                <!-- Audio Player -->
+                <div class="audio-player glass-card slide-up delay-2">
+                    <div class="card-glow">
+                        <p>fjjhf</p>
+                    </div>
+                    <audio id="bgMusic" loop muted>
+                      <source src="./89VW37x6.mp3" type="audio/mpeg">
+                    </audio>
+
+                </div>
+                <div class="designer-signature glass-card slide-up delay-2">
+                 <div class="card-glow"></div>
+                    <p class="designer-text">
+                      By <span>Eng : Mohamed Salah</span>
+                    </p>
+                </div>
+
+
+                <button id="backBtn" class="back-btn slide-up delay-3">
+                    ← Back to Login
+                </button>
+              </div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
